@@ -1,0 +1,65 @@
+@mixin rwd($getBreakpoint) {
+  @if map-has-key($breakpoints, $getBreakpoint) {
+    @media (max-width: #{map-get($breakpoints, $getBreakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: $getBreakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin absolute($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin flex($justify-content: center, $align-items: center) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin circle($width: 20px) {
+  display: inline-block;
+  width: $width;
+  height: $width;
+  text-align: center;
+  line-height: $width;
+  border-radius: 50%;
+}
+
+@mixin appearance() {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+@mixin reset($tag) {
+  @if $tag == a {
+      text-decoration: none;
+  } @else if $tag == button {
+      border: none;
+      background-color: transparent;
+  } @else if $tag == inputText {
+      border: none;
+      background-color: transparent;
+  } @else if $tag == checked {
+      @include appearance();
+      position: relative;
+      width: 15px;
+      height: 15px;
+      border: 1px solid $black;
+      background-color: transparent;
+  } @else if $tag == select {
+      @include appearance();
+      border: none;
+      background-color: transparent;
+  }
+}
