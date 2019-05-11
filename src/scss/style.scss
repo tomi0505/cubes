@@ -3,19 +3,20 @@
 @import 'mixin';
 @import 'settings';
 
+.container {
+  margin: 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
 .page {
   margin: 0 auto;
   max-width: 1366px;
 
-  &__container {
-    margin: 0 80px;
-    position: relative;
-    z-index: 2;
-  }
-
   &__header {
     position: relative;
     min-height: 330px;
+    color: $white;
     background-image: url('../src/img/bg_header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,7 +67,6 @@
 
     &:hover {
       color: $secondary-color;
-      font-weight: 600;
     }
 
     &--drop-down-link {
@@ -105,6 +105,42 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+}
+
+.breadcrumps {
+  width: 50%;
+  font-size: .7rem;
+  text-transform: uppercase;
+  background-color: rgba(255,255,255,.4);
+  overflow: hidden;
+
+  .container {
+    margin-top: 15px;
+    @include flex(flex-start, flex-start);
+  }
+
+  &__separator {
+    margin: 0 7px;
+  }
+
+  &__path2 {
+    margin-left: 60px;
+  }
+  
+  &__dropdown-btn {
+    font-size: .5rem;
+  }
+
+  &__patterns {
+    color: $primary-color;
+
+    &::after {
+      content: "\e904";
+      margin-left: 10px;
+      font-family: "icomoon";
+      font-size: .5rem;
     }
   }
 }
