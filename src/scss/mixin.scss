@@ -12,8 +12,8 @@
   }
 }
 
-@mixin absolute($top: 0, $left: 0) {
-  position: absolute;
+@mixin pos($pos, $top: 0, $left: 0) {
+  position: $pos;
   top: $top;
   left: $left;
 }
@@ -42,7 +42,9 @@
 }
 
 @mixin reset($tag) {
-  @if $tag == a {
+  @if $tag == ul {
+      list-style-type: none;
+  } @else if $tag == a {
       text-decoration: none;
   } @else if $tag == button {
       border: none;

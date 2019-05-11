@@ -4,10 +4,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
+  },
+  devServer: {
+    open: true
   },
   module: {
     rules: [
@@ -15,11 +18,15 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        use: { loader: "url-loader?limit=100000" }
       },
       {
         test: /\.scss$/,
@@ -34,10 +41,11 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              sourceMap: true
+              sourceMap: true,
+              url: false
             }
           },
-          'postcss-loader',
+          "postcss-loader",
           {
             loader: "sass-loader",
             options: {
@@ -50,7 +58,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: "./src/index.html"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -58,9 +66,9 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      cssProcessor: require("cssnano"),
       cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
+        preset: ["default", { discardComments: { removeAll: true } }]
       },
       canPrint: true
     })

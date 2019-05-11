@@ -9,6 +9,18 @@
   outline: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: Verdana, sans-serif;
+  background-color: cadetblue;
+}
+
+// PROJECT
+a {
+  &:visited {
+    color: $visitedLinkColor;
+  }
 }
