@@ -17,6 +17,7 @@
     position: relative;
     min-height: 330px;
     color: $white;
+    text-transform: uppercase;
     background-image: url('../src/img/bg_header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,14 +37,13 @@
   &__nav {
     margin: 10px 0;
     @include flex(space-between);
-    text-transform: uppercase;
   }
 }
 
 .logo {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: normal;
 
   &__link {
     @include reset(a);
@@ -55,10 +55,10 @@
 }
 
 .main-menu {
-  @include reset(ul);
   margin-right: auto;
   @include flex();
   font-size: .9rem;
+  list-style-type: none;
 
   &__link-item {
     @include reset(a);
@@ -67,6 +67,7 @@
 
     &:hover {
       color: $secondary-color;
+      text-shadow: 1px 0 0 $secondary-color;
     }
 
     &--drop-down-link {
@@ -110,9 +111,9 @@
 }
 
 .breadcrumps {
+  margin-bottom: 36px;
   width: 50%;
   font-size: .7rem;
-  text-transform: uppercase;
   background-color: rgba(255,255,255,.4);
   overflow: hidden;
 
@@ -121,26 +122,60 @@
     @include flex(flex-start, flex-start);
   }
 
-  &__separator {
-    margin: 0 7px;
+  &__path1,
+  &__path2 {
+    @include flex(flex-start, flex-start);
+    list-style-type: none;
   }
-
+  
   &__path2 {
     margin-left: 60px;
+  }
+
+  &__item {
+    &:not(:last-child)::after {
+      content: "/";
+      margin: 10px;
+    }
+
+    &--primary-color {
+      color: $primary-color;
+
+      &::after {
+        content: "\e904";
+        margin-left: 10px;
+        font-family: "icomoon";
+        font-size: .5rem;
+      }
+    }
   }
   
   &__dropdown-btn {
     font-size: .5rem;
   }
+}
 
-  &__patterns {
+.slider {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 1rem;
     color: $primary-color;
+    line-height: 22px;
+    font-weight: normal;
+  }
 
-    &::after {
-      content: "\e904";
-      margin-left: 10px;
-      font-family: "icomoon";
-      font-size: .5rem;
-    }
+  &__slider-container {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    font-size: 1.2rem;
+  }
+
+  &__prev-slide-btn,
+  &__next-slide-btn {
+    @include reset(button);
+    font-size: 1.7rem;
+    cursor: pointer;
   }
 }
