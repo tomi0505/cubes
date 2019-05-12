@@ -9,7 +9,7 @@
   <body>
     <div class="page">
       <header class="page__header">
-        <div class="container">
+        <div class="container-h">
           <nav class="page__nav">
             <h1 class="logo">
               <a href="http://tomaszgrzyb.eu/projects/cubes" class="logo__link">CUPWIZ</a>
@@ -35,23 +35,23 @@
               </li>
             </ol>
             <ul class="user-panel">
-              <li class="user-panel__btn-item">
+              <li role="button" class="user-panel__btn-item">
                 <i class="icon icon-header-search"></i>
               </li>
-              <li class="user-panel__btn-item">
+              <li role="button" class="user-panel__btn-item">
                 <i class="icon icon-header-account"></i>
               </li>
-              <li class="user-panel__btn-item">
+              <li role="button" class="user-panel__btn-item">
                 <i class="icon icon-heart-o"></i>
               </li>
-              <li class="user-panel__btn-item">
+              <li role="button" class="user-panel__btn-item">
                 <i class="icon icon-header-cart"></i>
               </li>
             </ul>
           </nav>
         </div>
         <section class="breadcrumps">
-          <div class="container">
+          <div class="container-h">
             <ul class="breadcrumps__path1">
               <li class="breadcrumps__item">home</li>
               <li class="breadcrumps__item">readymade<br>designs</li>
@@ -64,7 +64,7 @@
             </ul>
           </div>
         </section>
-        <div class="container slider">
+        <div class="container-h slider">
           <h3 class="slider__title">readymade<br>designs</h3>
           <div class="slider__slider-container">
             <button class="slider__prev-slide-btn">
@@ -88,30 +88,54 @@
           </div>
         </div>
       </header>
-      <main>
-        <section class="cube-products">
-          <div class="row">
-            <select class="cube-products__products-per-page">
+      <main class="container-h">
+        <section class="cub-products">
+          <div class="row-h">
+            <select class="cub-products__products-per-page">
               <option value="Products per page">Products per page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12</option>
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
-            <div class="cube-products__products-pagination">
-              <button class="cube-products__prev-btn">PREV</button>
-              <div class="cube-products__counter-products-page">
-                <span class="cube-products__page-products-number-item">1</span>
-                <span class="cube-products__page-products-number-item active">2</span>
-                <span class="cube-products__page-products-number-item">3</span>
-                <span class="cube-products__page-products-number-item">...</span>
-                <span class="cube-products__page-products-number-item">10</span>
+            <div class="cub-products__products-pagination">
+              <button class="cub-products__prev-btn">PREV</button>
+              <div class="cub-products__counter-products-page">
+                <span class="cub-products__page-products-number-item">1</span>
+                <span class="cub-products__page-products-number-item current">2</span>
+                <span class="cub-products__page-products-number-item">3</span>
+                <span class="cub-products__page-products-number-item">...</span>
+                <span class="cub-products__page-products-number-item">10</span>
               </div>
-              <button class="cube-products__next-btn">NEXT</button>
+              <button class="cub-products__next-btn">NEXT</button>
             </div>
-            <select class="cube-products__sort-by">
+            <select class="cub-products__sort-by">
               <option value="Sort by">Sort by</option>
               <option value="true">Increase</option>
               <option value="false">Decrease</option>
             </select>
+          </div>
+          <div class="cub-products__cub-cards-container">
+            <section class="cub-card">
+              <h5 class="product-status-alert">SALE</h5>
+              <figure class="cub-card__image-item-container">
+                <img src="src/img/cup1.png" class="cub-card__image-item" alt="cup">
+                <figcaption class="cub-card__title-card-container">
+                  <h3 class="cub-card__title">BLACK AND WHITE CRAZY STRIPES CUP</h3>
+                </figcaption>
+              </figure>
+              <div class="cub-card__price-info-container">
+                <h6 class="cub-card__old-price-container">
+                  &pound;<span class="span cub-card__old-price">80.87</span>
+                </h6>
+                <div class="cub-card__current-price-container">
+                  from: 
+                  <h4 class="cub-card__current-price-header">
+                    &pound;<span class="span cub-card__current-price">67.00</span>
+                  </h4>
+                  / box
+                </div>
+                <p class="cub-card__vat">price exc. VAT</p>
+              </div>
+            </section>
           </div>
         </section>
       </main>
