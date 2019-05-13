@@ -1,0 +1,4 @@
+.btn-h {
+  @include reset(button);
+  cursor: pointer;
+}

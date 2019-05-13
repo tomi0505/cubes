@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="src/icons/style.css">
     <title>Cupwiz</title>
   </head>
@@ -67,7 +68,7 @@
         <div class="container-h slider">
           <h3 class="slider__title">readymade<br>designs</h3>
           <div class="slider__slider-container">
-            <button class="slider__prev-slide-btn">
+            <button class="btn-h slider__prev-slide-btn">
               <i class="icon icon-category-prev-arrow"></i>
             </button>
             <div class="siema">
@@ -82,7 +83,7 @@
               <div>cities_2</div>
               <div>occasion_2</div>
             </div>
-            <button class="slider__next-slide-btn">
+            <button class="btn-h slider__next-slide-btn">
               <i class="icon icon-category-next-arrow"></i>
             </button>
           </div>
@@ -90,14 +91,14 @@
       </header>
       <main class="container-h">
         <section class="cub-products">
-          <div class="row-h">
+          <div class="cub-products__products-show-panel">
             <select class="cub-products__products-per-page">
               <option value="Products per page">Products per page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12</option>
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
             <div class="cub-products__products-pagination">
-              <button class="cub-products__prev-btn">PREV</button>
+              <button class="btn-h cub-products__prev-btn">PREV</button>
               <div class="cub-products__counter-products-page">
                 <span class="cub-products__page-products-number-item">1</span>
                 <span class="cub-products__page-products-number-item current">2</span>
@@ -105,7 +106,7 @@
                 <span class="cub-products__page-products-number-item">...</span>
                 <span class="cub-products__page-products-number-item">10</span>
               </div>
-              <button class="cub-products__next-btn">NEXT</button>
+              <button class="btn-h cub-products__next-btn">NEXT</button>
             </div>
             <select class="cub-products__sort-by">
               <option value="Sort by">Sort by</option>
@@ -113,7 +114,7 @@
               <option value="false">Decrease</option>
             </select>
           </div>
-          <div class="cub-products__cub-cards-container">
+          <div class="cub-cards-container">
             <section class="cub-card">
               <h5 class="product-status-alert">SALE</h5>
               <figure class="cub-card__image-item-container">
@@ -135,10 +136,39 @@
                 </div>
                 <p class="cub-card__vat">price exc. VAT</p>
               </div>
+              <div class="cub-card__shop-action-btns-container">
+                <button class="btn-h cub-card__choose-cups-btn">CHOOSE CUPS</button>
+                <div class="cub-card__saving-activity-btns-container">
+                  <button class="btn-h cub-card__favourite-cups-btn">FAVOURITE</button>
+                  <button class="btn-h cub-card__compare-cups-btn">COMPARE</button>
+                </div>
+              </div>
             </section>
           </div>
+          <div class="cub-products__products-show-panel cub-products__products-show-panel--centering-inner-items">
+            <div class="cub-products__products-pagination cub-products__products-pagination--shadow cub-products__products-pagination--padding">
+              <button class="btn-h cub-products__prev-btn">PREV</button>
+              <div class="cub-products__counter-products-page">
+                <span class="cub-products__page-products-number-item">1</span>
+                <span class="cub-products__page-products-number-item current">2</span>
+                <span class="cub-products__page-products-number-item">3</span>
+                <span class="cub-products__page-products-number-item">...</span>
+                <span class="cub-products__page-products-number-item">10</span>
+              </div>
+              <button class="btn-h cub-products__next-btn">NEXT</button>
+            </div>
+          </div>
+        </section>
+        <section class="simple-content-template">
+          <article class="simple-content-template__article-container">
+            <h2 class="simple-content-template__title">PATTERNS</h2>
+            <p class="simple-content-template__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor minus nisi officiis quod iste obcaecati, maxime earum suscipit aut eum provident, vitae facere exercitationem, reiciendis aliquid ratione similique cumque praesentium? Dolor minus nisi officiis quod iste obcaecati, maxime earum suscipit aut eum provident.
+              <button class="btn-h simple-content-template__read-more-btn">READ MORE</button>
+            </p>
+          </article>
         </section>
       </main>
     </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam sapiente non quaerat vitae amet nulla ullam, minus quo assumenda eligendi officiis perferendis enim reiciendis doloribus voluptas repellat recusandae exercitationem consequuntur!</p>
   </body>
 </html>

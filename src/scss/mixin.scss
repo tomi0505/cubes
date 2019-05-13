@@ -25,6 +25,16 @@
   align-items: $align-items;
 }
 
+@mixin bgPos($bg-url, $pos-x, $pos-y: 0%) {
+  @if $pos-x == false {
+    $pos-x: 0%;
+  }
+  background-image: url($bg-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: $pos-x $pos-y;
+}
+
 @mixin circle($width: 20px) {
   display: inline-block;
   width: $width;

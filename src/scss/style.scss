@@ -1,6 +1,7 @@
 @import 'reset-css/normalize';
 @import 'var';
 @import 'mixin';
+@import 'helpers';
 @import 'settings';
 
 .container-h {
@@ -18,10 +19,7 @@
     min-height: 330px;
     color: $white;
     text-transform: uppercase;
-    background-image: url('../src/img/bg_header.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -300px;
+    @include bgPos('../src/img/bg_header.png', false, -300px);
     overflow: hidden;
 
     &::after {
@@ -47,6 +45,7 @@
 
   &__link {
     @include reset(a);
+    transition: .2s;
 
     &:hover {
       color: $primary-color;
@@ -64,6 +63,7 @@
     @include reset(a);
     margin: 0 20px;
     color: $white;
+    transition: .2s;
 
     &:hover {
       color: $secondary-color;
@@ -100,6 +100,7 @@
     margin: 0 20px;
     font-size: 1.3rem;
     color: $white;
+    transition: .2s;
     cursor: pointer;
 
     &:hover {
@@ -162,7 +163,7 @@
 
   &__title {
     margin-bottom: 22px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: $primary-color;
     line-height: 22px;
     font-weight: normal;
@@ -176,19 +177,20 @@
 
   &__prev-slide-btn,
   &__next-slide-btn {
-    @include reset(button);
     font-size: 1.7rem;
-    cursor: pointer;
   }
 }
 
 .cub-products {
+  padding: 40px 0;
   font-size: 0.9rem;
-  overflow: hidden;
 
-  & > .row-h {
-    margin-top: 40px;
+  &__products-show-panel {
     @include flex(space-between);
+
+    &--centering-inner-items {
+      justify-content: center;
+    }
   }
 
   &__products-per-page,
@@ -196,6 +198,7 @@
     @include appearance();
     padding-bottom: 6px;
     padding-right: 20px;
+    width: 195px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $black;
@@ -207,15 +210,26 @@
 
   &__products-pagination {
     @include flex(space-between);
+
+    &--padding {
+      padding: 10px 30px;
+    }
+
+    &--shadow {
+      box-shadow: 0 9px 18px lighten($black, 82);
+    }
   }
 
   &__prev-btn,
   &__next-btn {
-    @include reset(button);
     margin-right: 10px;
     font-size: 0.8rem;
     font-weight: bold;
-    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      color: lighten($grey-dark-color, 5);
+    }
   }
 
   &__prev-btn {
@@ -242,7 +256,8 @@
   }
 
   &__page-products-number-item {
-    padding: 10px;
+    padding: 10px 14px;
+    display: inline-block;
     
     &.current {
       color: $primary-color;
@@ -252,10 +267,26 @@
 }
 
 // II. CUB-CARD
+.cub-cards-container {
+  margin: 20px 0;
+  @include flex(space-around);
+}
+
 .cub-card {
+  margin: 30px;
+  padding: 20px 35px;
   position: relative;
-  max-width: 300px;
+  max-width: 320px;
   text-align: center;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 0 20px lighten($black, 92);
+
+    & > .cub-card__shop-action-btns-container {
+      display: block;
+    }
+  }
 
   &__image-item {
     padding-top: 40px;
@@ -282,13 +313,125 @@
   &__vat {
     font-size: 0.8rem;
   }
+
+  // SHOP-ACTION-BTNS
+  &__shop-action-btns-container {
+    margin-top: 20px;
+    display: none;
+  }
+
+  &__choose-cups-btn {
+    padding: 30px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    color: $white;
+    font-weight: bold;
+    background-color: $light-green-color;
+    transition: .2s;
+
+    &:hover {
+      background-color: lighten($light-green-color, 10);
+    }
+  }
+
+  &__saving-activity-btns-container {
+    @include flex(space-between);
+    font-size: 0.7rem;
+  }
+  
+  &__favourite-cups-btn,
+  &__compare-cups-btn {
+    margin: 0 14px;
+    @include flex(space-between);
+    color: $grey-dark-color-strong;
+    transition: .2s;
+
+    &:hover {
+      transform: translateX(2px);
+    }
+    
+    &::before {
+      content: "\e915";
+      margin-right: 10px;
+      font-family: "icomoon";
+      font-size: 1.5rem;
+    }
+  }
+
+  &__compare-cups-btn {
+    &::before {
+      content: "\e912";
+    }
+  }
 }
 
 .product-status-alert {
   padding: 10px 20px;
-  @include pos(absolute);
+  @include pos(absolute, 20px, 35px);
   display: inline;
   color: $white;
   border-radius: 30px;
   background-color: $sale-alert-color;
+}
+
+// III. SIMPLE-CONTENT-TEMPLATE
+.simple-content-template {
+  margin: 40px 0 132px 0;
+  height: 270px;
+  position: relative;
+  @include bgPos('../src/img/bg_header.png', -47px, -264px);
+
+  &__article-container {
+    padding: 50px;
+    @include pos(absolute, 92px, 100px);
+    background-color: $white;
+    max-width: 620px;
+    box-shadow: 0 9px 18px lighten($black, 82);
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+  
+  &__content {
+    position: relative;
+    line-height: 24px;
+
+    &::after {
+      content: "";
+      @include pos(absolute);
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(transparent, rgba(255,255,255,.94) 62%);
+    }
+  }
+  
+  &__read-more-btn {
+    padding: 10px 35px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @include flex();
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid $black;
+    background-color: $white;
+    z-index: 1;
+    transition: .2s;
+
+    &:hover {
+      color: $white;
+      background-color: $black;
+    }
+
+    &::after {
+      content: "\e904";
+      margin-left: 10px;
+      font-family: "icomoon";
+      font-size: .5rem;
+    }
+  }
 }
