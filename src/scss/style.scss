@@ -6,8 +6,11 @@
 
 .container-h {
   margin: 0 80px;
-  position: relative;
-  z-index: 2;
+  
+  &--relative {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .page {
@@ -381,18 +384,64 @@
   position: relative;
   @include bgPos('../src/img/bg_header.png', -47px, -264px);
 
+  &--customize-cup {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include bgPos('../src/img/customise.png');
+    background-size: auto;
+    min-height: 472px;
+  }
+
+  &--design-service {
+    margin-top: 95px;
+    margin-bottom: 95px;
+    @include bgPos('../src/img/design.png', right);
+    background-size: auto;
+  }
+
+  &--newsletter {
+    margin-bottom: 0;
+    min-height: 362px;
+    background-image: none;
+  }
+
   &__article-container {
     padding: 50px;
     @include pos(absolute, 92px, 100px);
     background-color: $white;
     max-width: 620px;
     box-shadow: 0 9px 18px lighten($black, 82);
+
+    &--customize-cup {
+      top: 50%;
+      left: 557px;
+      transform: translateY(-50%);
+    }
+
+    &--design-service {
+      left: 100px;
+      max-width: 540px;
+    }
+
+    &--newsletter {
+      margin: 0 auto;
+      padding: 0;
+      position: static;
+      text-align: center;
+      box-shadow: none;
+      background-color: transparent;
+      transform: none;
+    }
   }
 
   &__title {
     margin-bottom: 15px;
     font-size: 2.4rem;
     font-weight: 600;
+
+    &--newsletter {
+      font-size: 4.4rem;
+    }
   }
   
   &__content {
@@ -406,6 +455,12 @@
       width: 100%;
       height: 100%;
       background-image: linear-gradient(transparent, rgba(255,255,255,.94) 62%);
+    }
+
+    &--customize-cup {
+      &::after {
+        content: none;
+      }
     }
   }
   
@@ -433,5 +488,66 @@
       font-family: "icomoon";
       font-size: .5rem;
     }
+
+    &--customize-cup {
+      margin-top: 15px;
+      position: static;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &--newsletter {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.header-info {
+  padding: 60px 0 22px 0;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.newsletter-and-footer-links-container {
+  @include bgPos('../src/img/cups.png', 94px, 102px);
+  background-size: 90%;  
+}
+
+// FOOTER-LINKS
+.footer-links {
+  position: relative;
+  @include flex(flex-end, flex-start);
+
+  &::after {
+    content: "";
+    @include pos(absolute);
+    width: 100%;
+    height: 100%;
+    background-color: $dark-color;
+    z-index: -1;
+  }
+
+  &__list-container {
+    margin: 60px 60px 0 60px;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    &:not(:first-child) {
+      margin: 10px 0;
+    }
+
+    &:first-child {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &__link-item {
+    text-decoration: none;
   }
 }
