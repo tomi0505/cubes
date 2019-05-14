@@ -25,13 +25,13 @@
   align-items: $align-items;
 }
 
-@mixin bgPos($bg-url, $pos-x: false, $pos-y: 0%) {
+@mixin bgPos($bg-url, $pos-x: false, $pos-y: 0%, $bg-size: cover) {
   @if $pos-x == false {
     $pos-x: 0%;
   }
   background-image: url($bg-url);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: $bg-size;
   background-position: $pos-x $pos-y;
 }
 

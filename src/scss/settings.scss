@@ -11,6 +11,10 @@
 
 html {
   font-size: 16px;
+
+  @include rwd(tablet) {
+    font-size: 15px;
+  }
 }
 
 body {
