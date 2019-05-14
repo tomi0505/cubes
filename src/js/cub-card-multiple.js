@@ -60,9 +60,7 @@ const addCubCardItemToDOM = (cubCardTemplateFull) => {
   const cubCardsContainer = document.querySelector(".cub-cards-container");
   const cubCard = document.createElement("section");
   cubCard.classList.add("cub-card");
-
   cubCard.innerHTML = cubCardTemplateFull;
-
   cubCardsContainer.appendChild(cubCard);
 };
 

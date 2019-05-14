@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // CREATE YOUR NEW CUP!! :-)
   newCub(
+    cubCardData.title[0],
+    cubCardData.image[0],
+    cubCardData.saleStatus[0]
+  );
+  newCub(
     cubCardData.title[1],
     cubCardData.image[1],
     cubCardData.saleStatus[1]
