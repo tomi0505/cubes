@@ -72,6 +72,19 @@
   font-size: .9rem;
   list-style-type: none;
 
+  @include rwd(1220px) {
+    display: none;
+
+    &.visible {
+      @include pos();
+      display: flex;
+      min-width: 320px;
+      flex-direction: column;
+      background-color: $secondary-color;
+      z-index: 990;
+    }
+  }
+
   &__link-item {
     @include reset(a);
     margin: 0 20px;
@@ -605,5 +618,17 @@
 
   &__visa {
     margin-right: 15px;
+  }
+}
+
+// RWD
+.hamburger-btn {
+  display: none;
+  font-size: 1.7rem;
+  order: 1;
+  cursor: pointer;
+
+  @include rwd(1220px) {
+    display: block;
   }
 }
