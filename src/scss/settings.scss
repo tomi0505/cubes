@@ -16,10 +16,3 @@ html {
 body {
   font-family: 'Open Sans', Verdana, sans-serif;
 }
-
-// PROJECT
-a {
-  &:visited {
-    color: $visitedLinkColor;
-  }
-}

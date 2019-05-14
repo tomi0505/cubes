@@ -39,6 +39,21 @@
     margin: 10px 0;
     @include flex(space-between);
   }
+
+  &__footer {
+    min-height: 100px;
+    @include flex(space-between);
+    font-size: 0.8rem;
+  }
+
+  &__copyright {
+    margin-bottom: 5px;
+    color: $grey-dark-color-strong;
+  }
+
+  &__bold-item {
+    font-weight: bold;
+  }
 }
 
 .logo {
@@ -48,11 +63,6 @@
 
   &__link {
     @include reset(a);
-    transition: .2s;
-
-    &:hover {
-      color: $primary-color;
-    }
   }
 }
 
@@ -382,7 +392,7 @@
   margin: 40px 0 132px 0;
   height: 270px;
   position: relative;
-  @include bgPos('../src/img/bg_header.png', -47px, -264px);
+  @include bgPos('../src/img/bg_header.png', 0, -264px);
 
   &--customize-cup {
     margin-top: 40px;
@@ -521,6 +531,8 @@
 .footer-links {
   position: relative;
   @include flex(flex-end, flex-start);
+  min-height: 300px;
+  font-size: 0.9rem;
 
   &::after {
     content: "";
@@ -532,8 +544,16 @@
   }
 
   &__list-container {
-    margin: 60px 60px 0 60px;
+    margin: 60px 40px 0 40px;
     list-style-type: none;
+
+    &:first-child {
+      margin-right: 75px;
+    }
+    
+    &:last-child {
+      margin-right: 142px;
+    }
   }
 
   &__list-item {
@@ -543,11 +563,47 @@
 
     &:first-child {
       margin-bottom: 20px;
-      font-weight: bold;
+      font-weight: 600;
+
+      &:hover {
+        & > .footer-links__link-item {
+          color: $secondary-color;
+          cursor: default;
+        }
+      }
     }
   }
 
   &__link-item {
+    color: $white;
     text-decoration: none;
+    transition: .2s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.social-icons {
+  font-size: 1.4rem;
+
+  &__icon-link {
+    @include reset(a);
+    margin: 0 15px;
+    color: darken($grey-dark-color-strong-2, 15);
+    transition: .2s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.credit-cards-logos {
+  @include flex();
+
+  &__visa {
+    margin-right: 15px;
   }
 }
