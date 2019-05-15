@@ -14,7 +14,7 @@ const cubCardTemplate = `
     </h6>
     <div class="cub-card__current-price-container">
       from: 
-      <h4 class="cub-card__current-price-header">
+      <h4 class="cub-card__current-price-header cub-card__current-price-header--{{saleColorClass}}">
         &pound;<span class="span cub-card__current-price">67.00</span>
       </h4>
       / box
@@ -39,6 +39,7 @@ const newCub = (setTitle, setImage, setSaleStatus) => {
   );
 
   let setSaleBgColorClass;
+  let setSaleColorClass;
 
   if(setSaleStatus === "SALE") {
     setSaleBgColorClass = "sale-bg-color";
@@ -48,15 +49,21 @@ const newCub = (setTitle, setImage, setSaleStatus) => {
     setSaleBgColorClass = "undefined-color";
   }
 
+  setSaleStatus === "SALE"? setSaleColorClass = "sale-color":setSaleColorClass = "undefined-color";
+
   const replaceSaleBgColorClass = replacesetSaleStatus.replace(
     "{{saleBgColorClass}}",
     setSaleBgColorClass
   );
+  const replaceSaleColorClass = replaceSaleBgColorClass.replace(
+    "{{saleColorClass}}",
+    setSaleColorClass
+  );
 
-  addCubCardItemToDOM(replaceSaleBgColorClass);
+  addCubCardItemToDOM(replaceSaleColorClass);
 };
 
-const addCubCardItemToDOM = (cubCardTemplateFull) => {
+const addCubCardItemToDOM = cubCardTemplateFull => {
   const cubCardsContainer = document.querySelector(".cub-cards-container");
   const cubCard = document.createElement("section");
   cubCard.classList.add("cub-card");

@@ -96,7 +96,6 @@
 
     &.visible {
       position: fixed;
-      top: 53px;
       right: 0;
       display: flex;
       flex-direction: column;
@@ -405,7 +404,10 @@
     margin: 3px 0;
     display: inline;
     font-size: 1.2rem;
-    color: $sale-alert-color;
+
+    &--sale-color {
+      color: $sale-alert-color;
+    }
   }
 
   &__vat {

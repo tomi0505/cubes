@@ -14,19 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   hamburger();
 
   // CREATE YOUR NEW CUP!! :-)
-  newCub(
-    cubCardData.title[0],
-    cubCardData.image[0],
-    cubCardData.saleStatus[0]
-  );
-  newCub(
-    cubCardData.title[1],
-    cubCardData.image[1],
-    cubCardData.saleStatus[1]
-  );
-  newCub(
-    cubCardData.title[1],
-    cubCardData.image[0],
-    "FREE"
-  );
+  newCub(cubCardData.title[0], cubCardData.image[0], cubCardData.saleStatus[0]);
+  newCub(cubCardData.title[1], cubCardData.image[1], cubCardData.saleStatus[1]);
+  newCub(cubCardData.title[1], cubCardData.image[0], "FREE");
 }, false);
