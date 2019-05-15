@@ -1,7 +1,9 @@
 import './scss/style.scss';
 import siemaSlider from './js/siema-slider';
-import hamburger from "./js/hamburger";
+import rwdMenu from "./js/rwd-menu";
 import newCub from "./js/cub-card-multiple";
+import chooseCubs from "./js/choose-cubs";
+import saveFavouriteCup from "./js/save-favourite-cup";
 
 const cubCardData = {
   title: ["BLACK AND WHITE CRAZY STRIPES CUP", "GREEN SQUARE RUSH CUP"],
@@ -11,10 +13,13 @@ const cubCardData = {
 
 document.addEventListener('DOMContentLoaded', function() {
   siemaSlider();
-  hamburger();
+  rwdMenu();
 
   // CREATE YOUR NEW CUP!! :-)
   newCub(cubCardData.title[0], cubCardData.image[0], cubCardData.saleStatus[0]);
   newCub(cubCardData.title[1], cubCardData.image[1], cubCardData.saleStatus[1]);
   newCub(cubCardData.title[1], cubCardData.image[0], "FREE");
+
+  chooseCubs();
+  saveFavouriteCup();
 }, false);

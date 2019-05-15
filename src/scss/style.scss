@@ -11,10 +11,6 @@
     position: relative;
     z-index: 2;
   }
-  
-  // &--reset-z-index {
-  //   z-index: 0;
-  // }
 }
 
 .page {
@@ -90,13 +86,12 @@
   @include flex();
   font-size: .9rem;
   list-style-type: none;
+  transition: 2s;
 
   @include rwd(1220px) {
-    display: none;
-
-    &.visible {
+    & {
       position: fixed;
-      right: 0;
+      right: -320px;
       display: flex;
       flex-direction: column;
       min-width: 320px;
@@ -119,6 +114,19 @@
         }
       }
 
+    }
+  }
+
+  &__item {
+    &--slide-right-arrow {
+      display: none;
+      cursor: pointer;
+
+      @include rwd(1220px) {
+        margin-left: auto;
+        margin-right: 51px;
+        display: block;
+      }
     }
   }
 
@@ -166,6 +174,7 @@
 
   &__btn-item {
     margin: 0 20px;
+    position: relative;
     font-size: 1.3rem;
     color: $white;
     transition: .2s;
@@ -181,6 +190,26 @@
     
     &:last-child {
       margin-right: 0;
+    }
+
+    &.shopping-cart {
+      &::after {
+        content: attr(data-shopping-cart-counter);
+        @include pos(absolute, -50%, 50%);
+        @include circle(21px);
+        font-size: .6rem;
+        background-color: $primary-color;
+      }
+    }
+    
+    &.favourite {
+      &::after {
+        content: attr(data-favourite-counter);
+        @include pos(absolute, -50%, 50%);
+        @include circle(21px);
+        font-size: .6rem;
+        background-color: $secondary-color;
+      }
     }
   }
 }
