@@ -4,6 +4,7 @@ import rwdMenu from "./js/rwd-menu";
 import newCub from "./js/cub-card-multiple";
 import chooseCubs from "./js/choose-cubs";
 import saveFavouriteCup from "./js/save-favourite-cup";
+import showPopUp from "./js/show-pop-up";
 
 const cubCardData = {
   title: ["BLACK AND WHITE CRAZY STRIPES CUP", "GREEN SQUARE RUSH CUP"],
@@ -13,6 +14,7 @@ const cubCardData = {
 
 document.addEventListener('DOMContentLoaded', function() {
   siemaSlider();
+  showPopUp();
   rwdMenu();
 
   // CREATE YOUR NEW CUP!! :-)

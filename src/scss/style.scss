@@ -790,6 +790,39 @@
   }
 }
 
+// POP-UP
+.pop-up {
+  display: none;
+  @include pos(fixed);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,.1);
+  z-index: 999;
+
+  &__container {
+    padding: 20px;
+    position: relative;
+    max-width: 400px;
+    background-color: $white;
+    border-radius: 5px;
+  }
+
+  &__title {
+    line-height: 28px;
+  }
+
+  &__close-btn {
+    @include pos(absolute, 0, 100%);
+    font-size: 1.2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  &.visible {
+    @include flex();
+  }
+}
+
 // RWD
 .hamburger-btn {
   display: none;
