@@ -25,6 +25,13 @@
       margin-right: 0;
     }
   }
+  
+  &--without-x-margin-phone-rwd {
+    @include rwd(phone) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 .page {
@@ -113,7 +120,7 @@
       right: -320px;
       display: flex;
       flex-direction: column;
-      min-width: 320px;
+      min-width: 264px;
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
       background-color: $secondary-color;
@@ -450,6 +457,11 @@
       width: 70%;
       height: 70%;
     }
+    
+    @include rwd(710px) {
+      width: 60%;
+      height: 60%;
+    }
   }
 
   &__title-card-container {
@@ -561,6 +573,14 @@
     margin-bottom: 65px;
   }
 
+  @include rwd(852px) {
+    background-position: center;
+  }
+  
+  @include rwd(phone) {
+    text-align: center;
+  }
+
   &--customize-cup {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -605,6 +625,10 @@
       transform: translate(-50%, -50%);
     }
 
+    @include rwd(810px) {
+      min-width: 470px;
+    }
+
     &--customize-cup {
       top: 50%;
       left: 557px;
@@ -642,8 +666,16 @@
     font-size: 2.4rem;
     font-weight: 600;
 
+    @include rwd(910px) {
+      font-size: 2rem;
+    }
+
     &--newsletter {
       font-size: 4.4rem;
+
+      @include rwd(910px) {
+        font-size: 3.4rem;
+      }
     }
   }
   
@@ -685,6 +717,11 @@
       background-color: $black;
     }
 
+    @include rwd(phone) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     &::after {
       content: "\e904";
       margin-left: 10px;
@@ -695,6 +732,12 @@
     &--customize-cup {
       margin-top: 15px;
       position: static;
+      transform: none;
+
+      @include rwd(phone) {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       &::after {
         content: none;
@@ -759,6 +802,15 @@
     text-align: center;
   }
 
+  @include rwd(medium) {
+    padding-top: 0;
+    padding-bottom: 90px;
+  }
+
+  @include rwd(phone) {
+    width: 100%;
+  }
+
   &::after {
     content: "";
     @include pos(absolute);
@@ -776,6 +828,10 @@
       margin-left: 0;
       margin-right: 0;
       width: 35%;
+    }
+
+    @include rwd(phone) {
+      width: 100%;
     }
 
     &:first-child {

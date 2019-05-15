@@ -1,7 +1,10 @@
 import Siema from "siema";
 
 const configSiema = new Siema({
-  perPage: 5,
+  perPage: {
+    768: 3,
+    1024: 5
+  },
   loop: true
 });
 
