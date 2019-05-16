@@ -73,7 +73,6 @@
     @include flex(space-between);
 
     & > * {
-      position: relative;
       z-index: 1;
     }
   }
@@ -123,10 +122,10 @@
 
   @include rwd(1220px) {
     position: fixed;
-    right: -320px;
+    right: -247px;
     display: flex;
     flex-direction: column;
-    min-width: 264px;
+    min-width: 247px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     background-color: $secondary-color;
@@ -150,10 +149,6 @@
         font-weight: bold;
       }
     }
-  }
-
-  @include rwd(phone) {
-    min-width: 230px;
   }
 
   &__item {
