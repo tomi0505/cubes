@@ -129,6 +129,11 @@
       & > .main-menu__item {
         margin-top: 20px;
         margin-bottom: 20px;
+
+        @include rwd(phone) {
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
       }
 
       & > .main-menu__item > .main-menu__link-item {
@@ -199,6 +204,11 @@
     margin-right: 70px;
   }
 
+  @include rwd(phone) {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+
   &__btn-item {
     margin: 0 20px;
     position: relative;
@@ -251,6 +261,10 @@
   @include rwd(tablet) {
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  @include rwd(phone) {
+    width: 100%;
   }
 
   & > .container-h {
@@ -363,6 +377,11 @@
       order: 1;
     }
 
+    @include rwd(phone) {
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
     &--padding {
       padding: 10px 30px;
     }
@@ -378,6 +397,10 @@
     font-size: 0.8rem;
     font-weight: bold;
     transition: .2s;
+
+    @include rwd(phone) {
+      margin-right: 2px;
+    }
 
     &:hover {
       color: lighten($grey-dark-color, 5);
@@ -396,6 +419,10 @@
     margin-right: 0;
     margin-left: 10px;
 
+    @include rwd(phone) {
+      margin-left: 2px;
+    }
+
     &::after {
       content: "\e90f";
       margin-left: 7px;
@@ -405,11 +432,19 @@
 
   &__counter-products-page {
     margin: 0 40px;
+
+    @include rwd(phone) {
+      margin: 0;
+    }
   }
 
   &__page-products-number-item {
     padding: 10px 14px;
     display: inline-block;
+
+    @include rwd(phone) {
+      padding: 5px 8px;
+    }
     
     &.current {
       color: $primary-color;
@@ -628,6 +663,10 @@
     @include rwd(810px) {
       min-width: 470px;
     }
+    
+    @include rwd(phone) {
+      min-width: 90%;
+    }
 
     &--customize-cup {
       top: 50%;
@@ -648,6 +687,10 @@
         left: 50%;
         transform: translateX(-50%, -50%);
       }
+
+      @include rwd(phone) {
+        max-width: 90%;
+      }
     }
 
     &--newsletter {
@@ -658,6 +701,10 @@
       box-shadow: none;
       background-color: transparent;
       transform: none;
+
+      @include rwd(phone) {
+        padding: 0 20px;
+      }
     }
   }
 
@@ -672,11 +719,45 @@
 
     &--newsletter {
       font-size: 4.4rem;
+      word-break: break-all;
 
       @include rwd(910px) {
         font-size: 3.4rem;
       }
     }
+  }
+
+  &__before {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      @include pos(absolute, 10px);
+      width: 100%;
+      height: 0.4rem;
+      background-color: $black;
+    }
+  }
+
+  &__triangle-left {
+    @include pos(absolute, 10px);
+    width: 0;
+    height: 0;
+    border-left: 0.2rem solid transparent;
+    border-bottom: 0.4rem solid black;
+    background-color: $white;
+  }
+  
+  &__triangle-right {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-right: 0.2rem solid transparent;
+    border-bottom: 0.4rem solid black;
+    background-color: $white;
   }
   
   &__content {
@@ -831,6 +912,7 @@
     }
 
     @include rwd(phone) {
+      margin-top: 40px;
       width: 100%;
     }
 
@@ -935,6 +1017,10 @@
     max-width: 400px;
     background-color: $white;
     border-radius: 5px;
+
+    @include rwd(phone) {
+      margin: 0 20px;
+    }
   }
 
   &__title {
@@ -961,5 +1047,9 @@
 
   @include rwd(1220px) {
     display: block;
+  }
+
+  @include rwd(phone) {
+    order: 0;
   }
 }
