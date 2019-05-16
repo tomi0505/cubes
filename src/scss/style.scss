@@ -50,7 +50,7 @@
     min-height: 330px;
     color: $white;
     text-transform: uppercase;
-    @include bgPos('../src/img/bg_header.png', false, -300px);
+    @include bgPos('../src/img/bg_header_blur.png', false, -300px);
     overflow: hidden;
 
     @include rwd(910px) {
