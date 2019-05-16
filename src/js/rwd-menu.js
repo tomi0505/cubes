@@ -1,3 +1,7 @@
+const rwd = window.matchMedia("(max-width: 1220px)");
+const nav = document.querySelector(".page__nav");
+const navHeight = outerHeight(nav);
+
 function outerHeight(el) {
   let height = el.offsetHeight;
   let style = getComputedStyle(el);
@@ -6,8 +10,23 @@ function outerHeight(el) {
   return height;
 }
 
-const nav = document.querySelector(".page__nav");
-const navHeight = outerHeight(nav);
+const stickyMenu = () => {
+  const mainMenu = document.querySelector(".main-menu");
+
+  if (window.pageYOffset > navHeight) {
+    mainMenu.style.top = `${0}px`;
+  } else {
+    mainMenu.style.top = `${navHeight}px`;
+  }
+}
+
+const setStickyRwd = rwd => {
+  if(rwd.matches) {
+    document.addEventListener("scroll", stickyMenu, false);
+  } else {
+    document.removeEventListener("scroll", stickyMenu);
+  }
+}
 
 const rwdMenu = () => {
   const hamburgerBtn = document.querySelector(".hamburger-btn");
@@ -25,13 +44,10 @@ const rwdMenu = () => {
   }, false);
 
   // STICKY MENU
-  document.addEventListener("scroll", function() {
-      if (window.pageYOffset > navHeight) {
-        mainMenu.style.top = `${0}px`;
-      } else {
-        mainMenu.style.top = `${navHeight}px`;
-      }
-  }, false);
+  setStickyRwd(rwd);
+  rwd.addListener(rwd => {
+    setStickyRwd(rwd);
+  });
 }
 
 const setToPPosMenu = () => {
