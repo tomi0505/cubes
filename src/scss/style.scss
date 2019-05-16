@@ -825,7 +825,7 @@
       font-size: .5rem;
 
       @include rwd(502px) {
-        margin-right: 10px;
+        margin: 10px 10px 0 10px;
       }
     }
 
