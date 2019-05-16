@@ -816,6 +816,10 @@
       margin-left: 10px;
       font-family: "icomoon";
       font-size: .5rem;
+
+      @include rwd(502px) {
+        margin-right: 10px;
+      }
     }
 
     &--customize-cup {
@@ -841,6 +845,7 @@
 }
 
 .header-info {
+  margin: 0 20px;
   padding: 60px 0 22px 0;
   font-size: 1.8rem;
   text-align: center;
@@ -1048,8 +1053,11 @@
 
 // RWD
 .hamburger-btn {
+  @include reset(button);
+  margin-top: 4px;
   display: none;
   font-size: 1.7rem;
+  color: $white;
   order: 1;
   cursor: pointer;
 
