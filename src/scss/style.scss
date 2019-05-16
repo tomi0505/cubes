@@ -18,6 +18,13 @@
       margin-right: 50px;
     }
   }
+  
+  &--small-x-margin {
+    @include rwd(phone) {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+  }
 
   &--without-x-margin {
     @include rwd(910px) {
