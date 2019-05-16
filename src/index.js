@@ -18,15 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
   rwdMenu();
 
   // CREATE YOUR NEW CUP
-  newCub(cubCardData.title[0], cubCardData.image[0], cubCardData.saleStatus[0]);
-  newCub(cubCardData.title[1], cubCardData.image[1], cubCardData.saleStatus[1]);
-  newCub(cubCardData.title[1], cubCardData.image[0], "FREE");
-
-  // for (let i = 0; i < 3; i++) {
-  //   newCub(cubCardData.title[0], cubCardData.image[0], cubCardData.saleStatus[0]);
-  //   newCub(cubCardData.title[1], cubCardData.image[1], cubCardData.saleStatus[1]);
-  //   newCub(cubCardData.title[1], cubCardData.image[0], "FREE");
-  // }
+  for (let i = 0; i < 3; i++) {
+    newCub(cubCardData.title[0], cubCardData.image[0], cubCardData.saleStatus[0]);
+    newCub(cubCardData.title[1], cubCardData.image[1], cubCardData.saleStatus[1]);
+    newCub(cubCardData.title[1], cubCardData.image[0], "FREE");
+  }
 
   chooseCubs();
   saveFavouriteCup();
