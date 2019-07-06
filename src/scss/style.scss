@@ -162,6 +162,10 @@
         display: block;
       }
     }
+
+    &:first-child {
+      margin-left: 60px;
+    }
   }
 
   &__link-item {
@@ -173,18 +177,6 @@
     &:hover {
       color: $secondary-color;
       text-shadow: 1px 0 0 $secondary-color;
-    }
-
-    &--drop-down-link {
-      margin: 0 40px 0 60px;
-      @include flex();
-
-      &::after {
-        content: "\e904";
-        margin-left: 10px;
-        font-family: "icomoon";
-        font-size: .5rem;
-      }
     }
 
     &--without-left-margin {
@@ -261,7 +253,7 @@
   background-color: rgba(255,255,255,.4);
   overflow: hidden;
 
-  @include rwd(tablet) {
+  @include rwd(910px) {
     margin-left: auto;
     margin-right: auto;
   }
