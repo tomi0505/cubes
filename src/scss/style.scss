@@ -135,6 +135,11 @@
       margin-top: 20px;
       margin-bottom: 20px;
 
+      &:first-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
       @include rwd(phone) {
         margin-top: 15px;
         margin-bottom: 15px;
@@ -1042,6 +1047,22 @@
 
   &.visible {
     @include flex();
+  }
+}
+
+.scroll-to-top-btn {
+  padding: 12px;
+  display: none;
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: $white;
+  border: 1px solid $black;
+
+  &--visible {
+    display: block;
   }
 }
 

@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="page__header">
+      <header class="page__header" id="header">
         <div class="container-h container-h--medium-x-margin container-h--small-x-margin">
           <nav class="page__nav">
             <h1 class="logo">
@@ -20,16 +20,19 @@
             <button class="icon icon-menu1 hamburger-btn"></button>
             <ul class="main-menu">
               <li class="main-menu__item">
-                <a href="#patterns" class="main-menu__link-item main-menu__link-item--without-left-margin">patterns</a>
+                <a href="#header" class="main-menu__link-item scroll">home</a>
               </li>
               <li class="main-menu__item">
-                <a href="#customizeCup" class="main-menu__link-item">customize cup</a>
+                <a href="#patterns" class="main-menu__link-item scroll">patterns</a>
               </li>
               <li class="main-menu__item">
-                <a href="#design" class="main-menu__link-item">design</a>
+                <a href="#customizeCup" class="main-menu__link-item scroll">customize cup</a>
               </li>
               <li class="main-menu__item">
-                <a href="#newsletter" class="main-menu__link-item main-menu__link-item--without-right-margin">newsletter</a>
+                <a href="#design" class="main-menu__link-item scroll">design</a>
+              </li>
+              <li class="main-menu__item">
+                <a href="#newsletter" class="main-menu__link-item main-menu__link-item--without-right-margin scroll">newsletter</a>
               </li>
               <li class="main-menu__item main-menu__item--slide-right-arrow">
                 <i class="icon icon-arrow-right"></i>
@@ -227,6 +230,7 @@
             </ul>
           </div>
         </div>
+        <a href="#header" class="scroll-to-top-btn scroll" role="button">do góry</a>
       </main>
       <footer class="page__footer container-h container-h--without-x-margin-phone-rwd">
         <div class="page__author">
