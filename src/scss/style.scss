@@ -452,12 +452,12 @@
 
 // II. CUB-CARD
 .cub-cards-container {
-  margin: 20px 0;
+  margin: 50px 0 20px;
   @include flex(space-around);
 }
 
 .cub-card {
-  margin: 30px;
+  margin: 15px 30px;
   padding: 20px 35px;
   position: relative;
   max-width: 320px;
@@ -468,7 +468,7 @@
     box-shadow: 0 0 20px lighten($black, 92);
 
     & > .cub-card__shop-action-btns-container {
-      display: block;
+      opacity: 1;
     }
   }
 
@@ -496,8 +496,26 @@
     }
   }
 
+  &__image-item-container {
+    height: 372px;
+
+    @include rwd(910px) {
+      margin-bottom: -45px;
+    }
+
+    @include rwd(710px) {
+      margin-bottom: -75px;
+    }
+  }
+
   &__title-card-container {
     margin-bottom: 15px;
+  }
+
+  &__title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &__old-price-container {
@@ -524,7 +542,8 @@
   // SHOP-ACTION-BTNS
   &__shop-action-btns-container {
     margin-top: 20px;
-    display: none;
+    opacity: 0;
+    transition: opacity .4s;
   }
 
   &__choose-cups-btn {
